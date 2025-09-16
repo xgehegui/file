@@ -62,7 +62,7 @@
 		{
 		  "title": "会员",
 		  "href": "",
-		  "icon": "fa fa-question-circle-o",
+		  "icon": "fa fa-star",
 		  "target": "",
 		  "child": [
 		    {
@@ -74,7 +74,7 @@
 			{
 			  "title": "会员充值",
 			  "href": "page/recharge.html",
-			  "icon": "fa fa-list",
+			  "icon": "fa fa-used",
 			  "target": "_self"
 			},
 			{
@@ -106,6 +106,7 @@
 			}
 			
 		  ]
+
 		}
       ]
     }
