@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>云存储会员方案</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <script>
+    tailwind.config = { theme: { extend: { colors: { primary: '#165DFF' } } }
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities { .hover-lift { @apply hover:-translate-y-1 transition-all duration-300; } }
+  </style>
+</head>
+<body class="bg-gray-50">
+  <!-- 导航栏 -->
+  <header class="bg-white shadow-sm">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="flex items-center">
+        <i class="fa fa-cloud text-primary text-2xl mr-2"></i>
+        <span class="text-xl font-bold text-primary">网络存储</span>
+      </div>
+
+      <div class="md:hidden">
+        <i class="fa fa-bars text-xl"></i>
+      </div>
+    </div>
+  </header>
+
+  <!-- 标题区域 -->
+  <section class="bg-primary text-white py-12 text-center">
+    <div class="container mx-auto px-4">
+      <h1 class="text-3xl md:text-4xl font-bold mb-4">选择适合您的会员方案</h1>
+      <p class="max-w-2xl mx-auto">灵活的存储方案，满足个人与团队的不同需求</p>
+    </div>
+  </section>
+
+  <!-- 会员方案 -->
+  <section class="py-12">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <!-- 基础会员 -->
+        <div class="bg-white rounded-xl shadow p-6 hover-lift">
+          <h3 class="text-xl font-bold mb-2">基础会员</h3>
+          <p class="text-gray-500 mb-4">个人轻量存储</p>
+          <div class="text-3xl font-bold mb-4">9.9元/月</div>
+          <ul class="space-y-2 mb-6">
+            <li class="flex items-center"><i class="fa fa-check text-green-500 mr-2"></i>50GB 存储空间</li>
+            <li class="flex items-center"><i class="fa fa-check text-green-500 mr-2"></i>基础加密保护</li>
+            <li class="flex items-center"><i class="fa fa-check text-green-500 mr-2"></i>30天文件恢复</li>
+            <li class="flex items-center text-gray-400"><i class="fa fa-times mr-2"></i>无多设备同步</li>
+          </ul>
+          <button class="w-full py-2 border border-primary text-primary rounded-lg hover:bg-primary/5">选择</button>
+        </div>
+
+        <!-- 进阶会员 -->
+        <div class="bg-white rounded-xl shadow-lg p-6 hover-lift border-2 border-primary relative transform md:-translate-y-2">
+          <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary text-white text-xs px-3 py-1 rounded-full">最受欢迎</div>
+          <h3 class="text-xl font-bold mb-2">进阶会员</h3>
+          <p class="text-gray-500 mb-4">个人高效管理</p>
+          <div class="text-3xl font-bold mb-4">29.9元/月</div>
+          <ul class="space-y-2 mb-6">
+            <li class="flex items-center"><i class="fa fa-check text-green-500 mr-2"></i>200GB 存储空间</li>
+            <li class="flex items-center"><i class="fa fa-check text-green-500 mr-2"></i>高级加密保护</li>
+            <li class="flex items-center"><i class="fa fa-check text-green-500 mr-2"></i>180天文件恢复</li>
+            <li class="flex items-center"><i class="fa fa-check text-green-500 mr-2"></i>多设备同步</li>
+          </ul>
+          <button class="w-full py-2 bg-primary text-white rounded-lg hover:bg-primary/90">选择</button>
+        </div>
+
+        <!-- 团队会员 -->
+        <div class="bg-white rounded-xl shadow p-6 hover-lift">
+          <h3 class="text-xl font-bold mb-2">团队会员</h3>
+          <p class="text-gray-500 mb-4">小型团队协作</p>
+          <div class="text-3xl font-bold mb-4">99元/月</div>
+          <ul class="space-y-2 mb-6">
+            <li class="flex items-center"><i class="fa fa-check text-green-500 mr-2"></i>1TB 共享空间</li>
+            <li class="flex items-center"><i class="fa fa-check text-green-500 mr-2"></i>团队权限管理</li>
+            <li class="flex items-center"><i class="fa fa-check text-green-500 mr-2"></i>365天文件恢复</li>
+            <li class="flex items-center"><i class="fa fa-check text-green-500 mr-2"></i>最多20人使用</li>
+          </ul>
+          <button class="w-full py-2 border border-primary text-primary rounded-lg hover:bg-primary/5">选择</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 常见问题 -->
+  <section class="py-12 bg-gray-100">
+    <div class="container mx-auto px-4 max-w-3xl">
+      <h2 class="text-2xl font-bold text-center mb-8">常见问题</h2>
+      <div class="space-y-4">
+        <div class="bg-white p-4 rounded-lg">
+          <p class="font-medium">会员到期后文件会被删除吗？</p>
+          <p class="text-gray-600 text-sm mt-1">不会，文件会被冻结但可查看下载，续费后恢复正常。</p>
+        </div>
+        <div class="bg-white p-4 rounded-lg">
+          <p class="font-medium">可以更换会员账号吗？</p>
+          <p class="text-gray-600 text-sm mt-1">每年可申请1次账号迁移，需身份验证。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+</body>
+</html>
+    
