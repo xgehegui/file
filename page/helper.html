@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			body{
+				background-color: #f2f2f2;
+			}
+			.wrapper{
+				width:80%;
+				margin:0 auto;
+				background-color: #ffffff; /* 为版心添加白色背景 */
+				padding:0 15px;
+				border-radius:10px;
+			}
+			.content{
+				color: #666667;
+				/* 移除原有的background-color，由wrapper统一控制 */
+				padding: 20px 15px; /* 可选：给内容区添加上下内边距 */
+			}
+			.header::after{
+				content:"";
+				display:block;
+				clear:both;
+			}
+			.header span{
+				float:left;
+				width:50%;
+				line-height: 60px; /* 让文字垂直居中 */
+			}
+			.header a:last-child{
+				text-decoration: none;
+				color:#666667;
+			}
+			.header span:first-child{
+				font-size:25px;
+			}
+			.header a{
+				float:right;
+				line-height: 60px; /* 让文字垂直居中 */
+			}
+
+			.items a:first-child{
+				width:50%;
+				float:left;
+				padding: 15px 0; /* 增加点击区域和间距 */
+			}
+			.items a:last-child{
+				width:50%;
+				float:left;
+				padding: 15px 0; /* 增加点击区域和间距 */
+			}
+			.items a{
+				margin:0; /* 移除原有margin，用padding控制间距 */
+		        text-decoration: none;
+				color: #666667;
+				font-size:20px;
+				display: inline-block; /* 让padding生效 */
+			}
+			.items::after{
+				content:"";
+				display:block;
+				clear:both; /* 清除浮动，避免高度塌陷 */
+			}
+		</style>
+	</head>
+	<body>
+		<div class="section">
+			<div class="wrapper header">
+				<span>使用帮助</span><span><a href="hobby.html">意见反馈</a></span>
+			</div>
+			<div class="wrapper content">
+				<div class="items">
+					<a href="">备份功能不完善，数据丢失</a>
+					<a href="">隐私与防攻击能力弱</a>
+				</div>
+				<div class="items">
+					<a href="">不支持“实时协同编辑”</a>
+					<a href="">设备同步有延迟</a>
+				</div>
+				<div class="items">
+					<a href="">传输速度慢</a>
+					<a href="">如何批量上传文件</a>
+				</div>
+				<div class="items">
+					<a href="">文件上传不上去怎么办</a>
+					<a href="">文件打不开怎么办</a>
+				</div>
+				<div class="items">
+					<a href="">如何上传文件</a>
+					<a href="">账号被盗了怎么办</a>
+				</div>
+				<div class="items">
+					<a href="">忘记密码怎么办</a>
+					<a href="">修改密码</a>
+				</div>
+				
+			</div>
+		</div>
+	</body>
+</html>

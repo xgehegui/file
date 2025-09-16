@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link rel="stylesheet" href="../lib/layui-v2.5.5/css/layui.css" media="all">
+		<link rel="stylesheet" href="../lib/font-awesome-4.7.0/css/font-awesome.min.css" media="all">
+		<link rel="stylesheet" href="../css/public.css" media="all">
+	</head>
+	<body>
+		<div>
+			<div class="layui-row layui-col-space15">
+			    <div class="layui-col-xs12 layui-col-md9">
+			        <div id="echarts-records" style="background-color:#ffffff;min-height:400px;padding: 10px"></div>
+			    </div>
+			    <div class="layui-col-xs12 layui-col-md3">
+			        <div id="echarts-pies" style="background-color:#ffffff;min-height:400px;padding: 10px"></div>
+			    </div>
+			</div>
+			
+			
+			<div class="layui-row layui-col-space15">
+			    <div class="layui-col-xs12 layui-col-md6">
+			        <div id="echarts-dataset" style="background-color:#ffffff;min-height:300px;padding: 10px"></div>
+			    </div>
+			    <div class="layui-col-xs12 layui-col-md6">
+			        <div id="echarts-map" style="background-color:#ffffff;min-height:300px;padding: 10px"></div>
+			    </div>
+			</div>
+		</div>
+		
+		
+		
+		
+		<script src="../lib/layui-v2.5.5/layui.js" charset="utf-8"></script>
+		<script src="../js/lay-config.js?v=1.0.4" charset="utf-8"></script>
+		<script>
+		    layui.use(['layer', 'echarts'], function () {
+		        var $ = layui.jquery,
+		            layer = layui.layer,
+		            echarts = layui.echarts;
+		
+		
+		        /**
+		         * 文件存储空间图表
+		         */
+		        var echartsPies = echarts.init(document.getElementById('echarts-pies'), 'walden');
+		        var optionPies = {
+		            title: {
+		                text: '存储空间',
+		                left: 'center'
+		            },
+		            tooltip: {
+		                trigger: 'item',
+		                formatter: '{a} <br/>{b} : {c} ({d}%)'
+		            },
+		            legend: {
+		                orient: 'vertical',
+		                left: 'left',
+		                data: ['jpg', 'png', 'txt', 'js', 'exe']
+		            },
+		            series: [
+		                {
+		                    name: '访问来源',
+		                    type: 'pie',
+		                    radius: '55%',
+		                    center: ['50%', '60%'],
+		                    roseType: 'radius',
+		                    data: [
+		                        {value: 335, name: 'jpg'},
+		                        {value: 310, name: 'png'},
+		                        {value: 234, name: 'txt'},
+		                        {value: 135, name: 'js'},
+		                        {value: 368, name: 'exe'}
+		                    ],
+		                    emphasis: {
+		                        itemStyle: {
+		                            shadowBlur: 10,
+		                            shadowOffsetX: 0,
+		                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+		                        }
+		                    }
+		                }
+		            ]
+		        };
+		        echartsPies.setOption(optionPies);
+		
+		
+		        /**
+		         * 柱状图
+		         */
+		        var echartsDataset = echarts.init(document.getElementById('echarts-dataset'), 'walden');
+		
+		        var optionDataset = {
+		            legend: {},
+		            tooltip: {},
+		            dataset: {
+		                dimensions: ['product', '2015', '2016', '2017'],
+		                source: [
+		                    {product: 'Matcha Latte', '2015': 43.3, '2016': 85.8, '2017': 93.7},
+		                    {product: 'Milk Tea', '2015': 83.1, '2016': 73.4, '2017': 55.1},
+		                    {product: 'Cheese Cocoa', '2015': 86.4, '2016': 65.2, '2017': 82.5},
+		                    {product: 'Walnut Brownie', '2015': 72.4, '2016': 53.9, '2017': 39.1}
+		                ]
+		            },
+		            xAxis: {type: 'category'},
+		            yAxis: {},
+		            // Declare several bar series, each will be mapped
+		            // to a column of dataset.source by default.
+		            series: [
+		                {type: 'bar'},
+		                {type: 'bar'},
+		                {type: 'bar'}
+		            ]
+		        };
+		
+		        echartsDataset.setOption(optionDataset);
+		
+		
+		        // echarts 窗口缩放自适应
+		        window.onresize = function () {
+		            echartsRecords.resize();
+		        }
+		
+		    });
+		</script>
+		
+	</body>
+</html>
